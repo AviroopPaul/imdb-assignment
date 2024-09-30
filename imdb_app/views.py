@@ -108,7 +108,7 @@ class MovieListView(generics.ListAPIView):
     serializer_class = MovieSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter, SearchFilter]  # Added SearchFilter
     filterset_fields = ['release_date', 'original_language']
-    ordering_fields = ['release_date', 'vote_average', 'budget', 'revenue']
+    ordering_fields = ['release_date', 'vote_average', 'budget', 'revenue', 'ratings']
     search_fields = ['title', 'original_title']  # Specify fields to search
     pagination_class = MoviePagination  # Updated to use custom pagination
 
