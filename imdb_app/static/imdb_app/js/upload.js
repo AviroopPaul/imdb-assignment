@@ -5,7 +5,7 @@ document.getElementById('upload-form').addEventListener('submit', function(e) {
     const messageDiv = document.getElementById('message');
     
     // Show the loader
-    loader.style.display = 'block';
+    loader.style.display = 'block'; // This line shows the loader
     messageDiv.innerHTML = '';
 
     fetch('/api/upload_csv/', {
@@ -15,7 +15,7 @@ document.getElementById('upload-form').addEventListener('submit', function(e) {
     .then(response => response.json())
     .then(data => {
         // Hide the loader
-        loader.style.display = 'none';
+        loader.style.display = 'none'; // This line hides the loader after upload
         
         if(data.error){
             messageDiv.innerHTML = `<p style="color:red;">${data.error}</p>`;
