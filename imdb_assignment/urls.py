@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
 from imdb_app import views
 from imdb_app import urls as imdb_app_urls
 
@@ -23,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('upload/', views.upload_page, name='upload'),
     path('movies/', views.movie_list_page, name='movie_list'),
-    path('api/', include(imdb_app_urls))
+    path('api/', include(imdb_app_urls)),
+    path('', RedirectView.as_view(url='/upload/', permanent=True)),  # Redirect root URL to /upload/
 ]
