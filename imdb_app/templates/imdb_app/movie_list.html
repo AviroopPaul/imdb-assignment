@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Movie List</title>
+    <link rel="stylesheet" href="{% static 'imdb_app/css/styles.css' %}" />
+    <style>
+      /* Basic styles for pagination buttons */
+      #pagination {
+        margin-top: 20px;
+      }
+      #pagination button {
+        margin: 0 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        border: none;
+        background-color: #f0f0f0;
+        border-radius: 3px;
+        transition: background-color 0.3s;
+      }
+      #pagination button:hover:not(.active):not(:disabled) {
+        background-color: #e0e0e0;
+      }
+      #pagination button.active {
+        background-color: #007bff;
+        color: white;
+      }
+      #pagination button:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Movie List</h1>
+    <div class="filters">
+      <input type="text" id="search" placeholder="Search by title..." />
+      <label for="sort">Filter By:&nbsp;</label>
+
+      <input
+        type="date"
+        id="release-date"
+        placeholder="Filter by release date"
+      />
+      <select id="language">
+        <option value="">Select Language</option>
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <!-- Add more languages as needed -->
+      </select>
+      <label for="sort">Sort By:&nbsp;</label>
+
+      <select id="sort">
+        <option value="">Sort By</option>
+        <option value="release_date">Release Date Asc</option>
+        <option value="-release_date">Release Date Desc</option>
+        <option value="vote_average">Vote Average Asc</option>
+        <option value="-vote_average">Vote Average Desc</option>
+        <option value="budget">Budget Asc</option>
+        <option value="-budget">Budget Desc</option>
+      </select>
+      <button id="filter-btn">Filter</button>
+    </div>
+    <table id="movies-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Original Title</th>
+          <th>Release Date</th>
+          <th>Budget</th>
+          <th>Revenue</th>
+          <th>Vote Average</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Movies will be dynamically inserted here -->
+      </tbody>
+    </table>
+
+    <!-- Pagination Container -->
+    <div id="pagination">
+      <!-- Pagination buttons will be dynamically inserted here -->
+    </div>
+
+    <script src="{% static 'imdb_app/js/movie_list.js' %}"></script>
+  </body>
+</html>

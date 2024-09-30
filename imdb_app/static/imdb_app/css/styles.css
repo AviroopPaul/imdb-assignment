@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+}
+
+form, .filters, table {
+    margin-top: 20px;
+}
+
+form input[type="file"] {
+    padding: 5px;
+}
+
+form button, .filters button {
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+
+.filters input, .filters select {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+#message p {
+    margin-top: 10px;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+}

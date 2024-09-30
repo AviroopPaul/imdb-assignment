@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Movies CSV</title>
+    <link rel="stylesheet" href="{% static 'imdb_app/css/styles.css' %}">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+        }
+        .container {
+            text-align: center; /* Center text inside the container */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Movies CSV</h1>
+        <form id="upload-form" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".csv" required>
+            <button type="submit">Upload</button>
+            {{ edit_1 }} <!-- New button for navigation -->
+            <button type="button" onclick="window.location.href='http://localhost:8000/movies/'">Go to Movie List</button>
+        </form>
+        <div id="loader" class="loader" style="display: none;"></div>
+        <div id="message"></div>
+    </div>
+
+    <script src="{% static 'imdb_app/js/upload.js' %}"></script>
+</body>
+</html>
